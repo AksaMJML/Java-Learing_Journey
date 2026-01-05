@@ -2,13 +2,17 @@ import java.util.*;
 import java.util.Scanner;
 
 public class hello {
-public static void main(String args[]){
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("what is the result : ");
+        String RCB = sc.next();
 
-      String a = "one";
-      String b = new String("one");
-
-      String c=b;
-
-      System.out.println(a==c); //false , because a refers to string literal in string pool and c refers to object in heap memory
+        if (RCB.equals("win")) {
+            System.out.println("RCB won the match");
+        } else if (RCB.equals("lose")) {
+            System.out.println("RCB lost the match");
+        }else {
+            System.out.println("match drawn");
+        }
     }
 }
