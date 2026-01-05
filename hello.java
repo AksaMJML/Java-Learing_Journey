@@ -4,9 +4,11 @@ import java.util.Scanner;
 public class hello {
 public static void main(String args[]){
 
-      String f1 = new String("banana");
-      String f2 = new String("banana");
+      String a = "one";
+      String b = "one";
 
-      System.out.println(f1.equals(f2)); //true, checks the value
+      String c=b;
+
+      System.out.println(a==c); //true
     }
 }
