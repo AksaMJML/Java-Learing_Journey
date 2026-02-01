@@ -1,41 +1,37 @@
- interface Vehicle{
-	 void parking();
-	 void start();
-}
+import java.util.*;
 
-class Car implements Vehicle{
-	@Override
-	public void parking(){
-		System.out.println("Car Parking");
+class Vehicle{
+	public void accelarate(){
+		System.out.println("Vehicle accelarated");
 	}
-	
-	@Override
-	public void start(){
-		System.out.println("Car Starting");
+}  
+class Car extends Vehicle{
+	public void accelarate(){
+		System.out.println("Car Accelerated");
 	}
 }
 
-class Van implements Vehicle{
-	@Override
-	public void parking(){
-		System.out.println("Van Parking");
+class Bus extends Vehicle{
+	public void accelarate(){
+		System.out.println("Bus Accelerated");
 	}
-	
-	@Override
-	public void start(){
-		System.out.println("Van Starting");
+}
+
+class Van extends Vehicle{
+	public void accelarate(){
+		System.out.println("Van Accelerated");
 	}
-}                                                           
+}
 
 class Demo{
 	public static void main(String args[]){
-		Vehicle[] vehicles = new Vehicle[2];
-		vehicles[0] = new Car();
-		vehicles[1] = new Van();
+		List<Vehicle> vehicleList = new ArrayList<>();
 		
-		for(Vehicle v : vehicles){
-			v.parking();
-			v.start();
-		}
+		vehicleList.add(new Car());
+		vehicleList.add(new Van());
+		vehicleList.add(new Bus());
+		for( Vehicle v1 : vehicleList){
+			v1.accelarate();	
+		}	
 	}
 }
