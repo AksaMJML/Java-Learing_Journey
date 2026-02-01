@@ -1,25 +1,35 @@
 import java.util.*;
 
-class Vehicle{
-	public void accelarate(){
-		System.out.println("Vehicle accelarated");
-	}
+interface Vehicle{
+	void accelarate();
+	void accelarate(int speed);
 }  
-class Car extends Vehicle{
+class Car implements Vehicle{
 	public void accelarate(){
-		System.out.println("Car Accelerated");
+		System.out.println("Car accelarated ");
+	}
+	
+	public void accelarate(int speed){
+		System.out.println("Car accelarated " + speed);
+	}
+	
+}
+
+class Bus implements Vehicle{
+	public void accelarate(){
+		System.out.println("Bus accelarated ");
+	}
+	public void accelarate(int speed){
+		System.out.println("Bus accelarated " + speed);
 	}
 }
 
-class Bus extends Vehicle{
+class Van implements Vehicle{
 	public void accelarate(){
-		System.out.println("Bus Accelerated");
+		System.out.println("Van accelarated ");
 	}
-}
-
-class Van extends Vehicle{
-	public void accelarate(){
-		System.out.println("Van Accelerated");
+	public void accelarate(int speed){
+		System.out.println("Van accelarated " + speed);
 	}
 }
 
@@ -32,6 +42,7 @@ class Demo{
 		vehicleList.add(new Bus());
 		for( Vehicle v1 : vehicleList){
 			v1.accelarate();	
+			v1.accelarate(100);	
 		}	
 	}
 }
